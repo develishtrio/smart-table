@@ -12,17 +12,7 @@ import {initTable} from "./components/table.js";
 import {initPagination} from "./components/pagination.js";
 
 // @todo: подключение
-const applyPagination = initPagination(
-    sampleTable.pagination.elements,
-    (el, page, isCurrent) => {
-        const input = el.querySelector('input');
-        const label = el.querySelector('span');
-        input.value = page;
-        input.checked = isCurrent;
-        label.textContent = page;
-        return el;
-    }
-);
+
 
 
 
@@ -60,6 +50,7 @@ function render(action) {
     sampleTable.render(result)
 }
 
+
 const sampleTable = initTable({
     tableTemplate: 'table',
     rowTemplate: 'row',
@@ -68,6 +59,17 @@ const sampleTable = initTable({
 }, render);
 
 // @todo: инициализация
+const applyPagination = initPagination(
+    sampleTable.pagination.elements,
+    (el, page, isCurrent) => {
+        const input = el.querySelector('input');
+        const label = el.querySelector('span');
+        input.value = page;
+        input.checked = isCurrent;
+        label.textContent = page;
+        return el;
+    }
+);
 
 
 const appRoot = document.querySelector('#app');

@@ -5,7 +5,7 @@ export const initPagination = ({pages, fromRow, toRow, totalRows}, createPage) =
 
     return (data, state, action) => {
         // @todo: #2.1 — посчитать количество страниц, объявить переменные и константы
-
+        const rowsPerPage = state.rowsPerPage;
         // @todo: #2.6 — обработать действия
 
         // @todo: #2.4 — получить список видимых страниц и вывести их
